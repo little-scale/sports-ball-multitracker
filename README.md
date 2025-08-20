@@ -26,7 +26,7 @@ pip install ultralytics opencv-python python-osc
 
 ## Quick Start (tennis ball)
 ```bash
-python tennis_ball_controller_multitrack.py \
+python sports_ball_multitracker.py \
   --classes "sports ball" --max-slots 3 --imgsz 320 --ema 0.25
 ```
 
@@ -58,7 +58,7 @@ Each `/ball/n` outputs `[x y size]`. Sentinel for “no target” is `[-1.0, -1.
 ### Profiles
 **CPU-fast:**
 ```bash
-python tennis_ball_controller_multitrack.py \
+python sports_ball_multitracker.py \
   --model yolov8n.pt --imgsz 288 --conf 0.20 --iou 0.50 --ema 0.3 \
   --tracker bytetrack.yaml --max-slots 3
 ```
@@ -66,9 +66,9 @@ python tennis_ball_controller_multitrack.py \
 **GPU / Apple M-series:**
 ```bash
 # CUDA
-python tennis_ball_controller_multitrack.py --model yolo11s.pt --device cuda --imgsz 384 --ema 0.25 --tracker botsort.yaml
+python sports_ball_multitracker.py --model yolo11s.pt --device cuda --imgsz 384 --ema 0.25 --tracker botsort.yaml
 # Apple Silicon (Metal)
-python tennis_ball_controller_multitrack.py --model yolov8s.pt --device mps --imgsz 384 --ema 0.25 --tracker botsort.yaml
+python sports_ball_multitracker.py --model yolov8s.pt --device mps --imgsz 384 --ema 0.25 --tracker botsort.yaml
 ```
 
 ## How Slot Assignment Works
@@ -94,12 +94,8 @@ All values are floats. `x, y` are normalized to the current camera frame; `size`
 
 ## Listing COCO Class Names
 ```bash
-python tennis_ball_controller_multitrack.py --list-classes
+python sports_ball_multitracker.py --list-classes
 ```
 
 ## Notes
 - This tool depends on Ultralytics’ `ultralytics` package and its trackers.
-- MediaPipe is not required here. If you later want a color-based fallback (HSV) for neon-green balls, you can add it as a mode toggle.
-
----
-Happy tracking! 🎾
