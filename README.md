@@ -20,6 +20,7 @@ Real-time multi-object tracker using Ultralytics YOLO (v8/v11…) and BYTETracke
 ```bash
 python -m venv .venv && source .venv/bin/activate   # (optional)
 pip install ultralytics opencv-python python-osc
+pip install --no-cache-dir "lap>=0.5.12"
 ```
 
 > **Models:** This script expects a COCO-trained YOLO checkpoint, e.g. `yolov8n.pt`, `yolov8s.pt`, `yolo11n.pt`, `yolo11s.pt`. Place it where Ultralytics can download/load it automatically, or pass `--model /path/to/weights.pt`.
