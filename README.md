@@ -15,6 +15,7 @@ Real-time multi-object tracker using Ultralytics YOLO (v8/v11…) and BYTETracke
   - Minimum size gate (`--min-area`)
 - **Flexible classes** via `--classes "sports ball,cup,banana"`
 - **Fast on CPU**, optional GPU/CUDA or Apple `mps`
+- Choose camera with --source flag
 
 ## Install
 ```bash
